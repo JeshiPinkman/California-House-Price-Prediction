@@ -121,9 +121,20 @@ When training the models, Instead of changing the strength of hyper-parameter of
  The graph below represents Mean Squared Error of train and test data are the closest when the degree of polynomial is 2.
 ![Screenshot 2025-04-13 155725](https://github.com/user-attachments/assets/9776f481-3a91-48f7-bfed-dce1c8cbb0c9)
 
+A visual representation of how well our predictions are fitting the data are shown in the figure below. Due to having high number of dimensions, the graph is plotted selecting the feature that explains the most variation in the house prices, that is 'median_income'. The x-axis represents 'median_income' and Y-axis represents the target feature, 'median_house_value' :
+![Screenshot 2025-04-14 194734](https://github.com/user-attachments/assets/8e5eff68-38c5-4e21-bfb8-86dd65762c29)
+
+
 #### 4.1.2 Decision Tree 
-Decision Trees is a non parametric model which consist of several hyper-parameters like 'max depth', 'min samples split' and 'min samples leaf'. These hyper-parameters are tuned using a cross validation method. This method splits the train and test data into k folds to get the best split that minimizes Mean Squared Error. 
+Decision Trees is a non parametric model which consist of several hyper-parameters like 'max depth', 'min samples split' and 'min samples leaf'. These hyper-parameters are tuned using a cross validation method. This method splits the train and test data into k folds to get the best split that minimizes Mean Squared Error.
+
 ![Screenshot 2025-04-13 160051](https://github.com/user-attachments/assets/7c2450e9-23d4-417b-9e91-f89643608a36)
 
 #### 4.1.3 Ridge Regression
 Ridge regression model being similar to Linear Regression, the second degree of polynomial features is applied as it yielded the best results for linear regression. Also, ridge regression model consists of regularization weight (${\alpha}$) which is also a hyper-parameter. The loop method is applied to this model that  increases $alpha$ value with each iteration. The model is trained on train set and predictions are made on train set with the value of ${\alpha}$  changing through every iteration. There is no sign of overfitting and underfitting when the $alpha$ is 3 as shown in the figure below.
+
+![Screenshot 2025-04-14 211357](https://github.com/user-attachments/assets/7bc7d161-6350-422a-9fd3-53ac70f07437)
+
+![Screenshot 2025-04-14 211409](https://github.com/user-attachments/assets/6e32c172-c0e7-4b4c-af2c-5ff6f92cb771)
+
+
