@@ -131,10 +131,31 @@ Decision Trees is a non parametric model which consist of several hyper-paramete
 ![Screenshot 2025-04-13 160051](https://github.com/user-attachments/assets/7c2450e9-23d4-417b-9e91-f89643608a36)
 
 #### 4.1.3 Ridge Regression
-Ridge regression model being similar to Linear Regression, the second degree of polynomial features is applied as it yielded the best results for linear regression. Also, ridge regression model consists of regularization weight (${\alpha}$) which is also a hyper-parameter. The loop method is applied to this model that  increases $alpha$ value with each iteration. The model is trained on train set and predictions are made on train set with the value of ${\alpha}$  changing through every iteration. There is no sign of overfitting and underfitting when the $alpha$ is 3 as shown in the figure below.
+Ridge regression model being similar to Linear Regression, the second degree of polynomial features is applied as it yielded the best results for linear regression. Also, ridge regression model consists of regularization weight (${\alpha}$) which is also a hyper-parameter. The loop method is applied to this model that  increases $alpha$ value with each iteration. The model is trained on train set and predictions are made on train set with the value of ${\alpha}$  changing through every iteration. There is no sign of overfitting and underfitting when the $alpha$ is 0 as shown in the figure below. This means that ridge regression model is not a good model for this dataset because if $alpha$ is 0, then the model is a Linear Regression model.
 
 ![Screenshot 2025-04-14 211357](https://github.com/user-attachments/assets/7bc7d161-6350-422a-9fd3-53ac70f07437)
 
 ![Screenshot 2025-04-14 211409](https://github.com/user-attachments/assets/6e32c172-c0e7-4b4c-af2c-5ff6f92cb771)
+
+### 4.2 Results
+The performance of the models are evaluated using both Mean Squared Error(MSE) and $R^2$ score because MSE gives information about the magnitude of the error in the predictions but it does not provide how close the predicted target values are to the real target values. A well-tuned model can achieve low MSE, but if selected features have low correlation, it may lead to a low $R^2$ score, indicating limited explanation of variation in target variable. 
+
+In Table \ref{Results table}, the best results of each model after hyper-parameter tuning is shown.  Due to varying 'median house value' (15,000-500,000), MSE seems large as it is affected by the scale of target values. but $R^2$ score is not affected as it gives analysis by normalizing. In Table\ref{Results table},Polynomial regression shows lower MSE, suggesting better prediction accuracy. Its $R^2$ score of 0.6893 implies it explains a good portion($68.93\%$) of variation in house price.
+
+
+| Model               | MSE               | $R^2$      |
+|---------------------|-------------------|------------|
+| **Polynomial Regression** | **4,051,638,439.06** | **0.6893** |
+| Ridge Regression    | 4,063,422,740.67  | 0.6884  |
+| Decision Tree       | 4,262,577,810.13  | 0.6731  |
+
+
+### 4.3 Discussion
+
+The bar graph compares three models using two measures: Mean Squared Error (MSE) and $R^2$ score, for training and test data. The Decision Tree model, after tuning, fits the training data too closely, leading to a high error on unseen test data, showing it's not a good choice for predictions. The Regression model with polynomial features also overfits, but less than the Decision Tree. Linear Regression with 2nd degree of polynomial performs well, showing similar error rates for training and test data, indicating it doesn't show signs of overfitting or underfitting. It also has the best $R^2$ score for test data, making it the best model for predicting house values.
+
+![Screenshot 2025-04-15 103245](https://github.com/user-attachments/assets/bda417a1-3602-41c4-97b2-0e5b41ff67e8)
+
+![Screenshot 2025-04-15 103258](https://github.com/user-attachments/assets/204ff058-119f-4a5a-b9c6-3f64805ac666)
 
 
