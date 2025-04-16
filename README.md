@@ -33,6 +33,9 @@ The table shows that 'total_bedrooms' contain some missing values. The feature, 
 
 The histogram shows that the features 'median_house_value' and 'housing_median_age' consists of some outliers as there is a negative skewness in both the features which means that some values are exponentially higher than the others. These are called outliers. 
 
+Correlation measures the strength and direction of the linear relationship between two variables. It ranges from -1 to 1, where -1 represents 1 perfectly negative linear relationship and +1 represents perfectly positive linear relationship. The figure below shows the correlation matrix of 'median_house_value' to all other features in the dataset. The figure displays that 'median_house_value' and 'median_income' have a strong positive correlation. This means that as income increases, the house value tends to go up. For this reason, All the graphs seen in the bold{experiments} section are plotted with 'median_income' as the x-axis against 'median_house_value' as y-axis.
+
+![Screenshot 2025-04-16 095634](https://github.com/user-attachments/assets/0784e3dd-8b80-401d-8366-490b419f6c1e)
 
 #### Missing values
 As stated previously, the dataset has 9 features and 1 target. For preprocessing, the dataset is split into train and test set. The recommended split is 80% of the dataset as train set and 20% as test set. 
@@ -140,7 +143,7 @@ Ridge regression model being similar to Linear Regression, the second degree of 
 ### 4.2 Results
 The performance of the models are evaluated using both Mean Squared Error(MSE) and $R^2$ score because MSE gives information about the magnitude of the error in the predictions but it does not provide how close the predicted target values are to the real target values. A well-tuned model can achieve low MSE, but if selected features have low correlation, it may lead to a low $R^2$ score, indicating limited explanation of variation in target variable. 
 
-In Table \ref{Results table}, the best results of each model after hyper-parameter tuning is shown.  Due to varying 'median house value' (15,000-500,000), MSE seems large as it is affected by the scale of target values. but $R^2$ score is not affected as it gives analysis by normalizing. In Table\ref{Results table},Polynomial regression shows lower MSE, suggesting better prediction accuracy. Its $R^2$ score of 0.6893 implies it explains a good portion($68.93\%$) of variation in house price.
+In Table, the best results of each model after hyper-parameter tuning is shown.  Due to varying 'median house value' (15,000-500,000), MSE seems large as it is affected by the scale of target values. but $R^2$ score is not affected as it gives analysis by normalizing. In Table\ref{Results table},Polynomial regression shows lower MSE, suggesting better prediction accuracy. Its $R^2$ score of 0.6893 implies it explains a good portion($68.93\%$) of variation in house price.
 
 
 | Model               | MSE               | $R^2$      |
